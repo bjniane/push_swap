@@ -6,7 +6,7 @@
 /*   By: bjniane <bjniane@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/10 16:17:37 by bjniane           #+#    #+#             */
-/*   Updated: 2024/05/13 04:53:11 by bjniane          ###   ########.fr       */
+/*   Updated: 2024/06/02 16:04:59 by bjniane          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -59,30 +59,29 @@ t_stack	*ft_lstnew(int content)
 	return (new);
 }
 
-int	ft_min(t_stack *a)
+t_stack	*ft_min(t_stack *a)
 {
-	int	i;
+	t_stack	*min_node;
 
-	i = a->data;
+	min_node = a;
 	while (a)
 	{
-		if (a->data < i)
-			i = a->data;
+		if (a->data < min_node->data)
+			min_node = a;
 		a = a->next;
 	}
-	return (i);
+	return (min_node);
 }
 
-int	ft_max(t_stack *a)
+t_stack	*ft_max(t_stack *a)
 {
-	int i;
+	t_stack *max_node = a;
 
-	i = a->data;
 	while (a)
 	{
-		if (a->data > i)
-			i = a->data;
+		if (a->data > max_node->data)
+			max_node = a;
 		a = a->next;
 	}
-	return (i);
+	return (max_node);
 }

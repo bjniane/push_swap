@@ -6,7 +6,7 @@
 /*   By: bjniane <bjniane@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/13 00:37:43 by bjniane           #+#    #+#             */
-/*   Updated: 2024/05/13 04:52:52 by bjniane          ###   ########.fr       */
+/*   Updated: 2024/05/28 14:25:42 by bjniane          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,9 +14,9 @@
 
 void	ft_sort_3(t_stack **a)
 {
-	if ((*a)->data == ft_max(*a))
+	if (*a == ft_max(*a))
 		ft_ra(a, 0);
-	else if ((*a)->next->data == ft_max(*a))
+	else if ((*a)->next == ft_max(*a))
 		ft_rra(a, 0);
 	if ((*a)->data > (*a)->next->data)
 		ft_sa(a, 0);

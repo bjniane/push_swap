@@ -6,7 +6,7 @@
 /*   By: bjniane <bjniane@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/13 01:49:23 by bjniane           #+#    #+#             */
-/*   Updated: 2024/05/18 09:16:22 by bjniane          ###   ########.fr       */
+/*   Updated: 2024/06/02 16:05:39 by bjniane          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -75,7 +75,6 @@ void	ft_pb(t_stack **a, t_stack **b, int j)
 	if (j == 0)
 		write(1, "pb\n", 3);
 }
-
 void	ft_sa(t_stack **a, int j)
 {
 	t_stack	*tmp;
@@ -111,7 +110,6 @@ void	ft_ss(t_stack **a, t_stack **b, int j)
 	if (j == 0)
 		write(1, "ss\n", 3);
 }
-
 void	ft_rra(t_stack **a, int j)
 {
 	t_stack	*prev;
@@ -159,5 +157,6 @@ void	ft_rrr(t_stack **a, t_stack **b, int j)
 	ft_rra(a, 1);
 	ft_rrb(b, 1);
 	if (j == 0)
-		write(1, "rrr\n", 4);;
+		write(1, "rrr\n", 4);
+	;
 }
