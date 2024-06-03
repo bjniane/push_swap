@@ -6,7 +6,7 @@
 /*   By: bjniane <bjniane@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/10 20:03:11 by bjniane           #+#    #+#             */
-/*   Updated: 2024/05/13 04:53:05 by bjniane          ###   ########.fr       */
+/*   Updated: 2024/06/03 16:21:49 by bjniane          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,7 +28,7 @@ int	ft_atoi(const char *str)
 	sign = 1;
 	result = 0;
 	i = 0;
-	while (str[i] == ' ' || (str[i] >= 9 && str[i] <= 13))
+	while (str[i] == ' ')
 		i++;
 	if (str[i] == '+' || str[i] == '-')
 	{
@@ -78,9 +78,9 @@ char	*ft_strdup(char *src)
 
 char	*ft_substr(char const *s, unsigned int start, size_t len)
 {
-	size_t i;
-	char *sub;
-	size_t str_len;
+	size_t	i;
+	char	*sub;
+	size_t	str_len;
 
 	i = 0;
 	if (!s)

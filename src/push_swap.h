@@ -6,7 +6,7 @@
 /*   By: bjniane <bjniane@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/10 15:57:46 by bjniane           #+#    #+#             */
-/*   Updated: 2024/06/02 15:48:46 by bjniane          ###   ########.fr       */
+/*   Updated: 2024/06/03 14:41:19 by bjniane          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,17 +54,26 @@ void				ft_rra(t_stack **a, int j);
 void				ft_rrb(t_stack **b, int j);
 void				ft_rrr(t_stack **a, t_stack **b, int j);
 void				current_index(t_stack *a);
-void				set_cheapest(t_stack *a);
+void				set_cheapest_a(t_stack *a);
+void				set_cheapest_b(t_stack *b);
 void				init_node_a(t_stack *a, t_stack *b);
 void				init_node_b(t_stack *a, t_stack *b);
 void				ft_sort(t_stack **a, t_stack **b);
-void				rotate_both(t_stack **a, t_stack **b,
+void				rotate_both_a(t_stack **a, t_stack **b,
 						t_stack *cheapest_node);
-void				rev_rotate_both(t_stack **a, t_stack **b,
+void				rev_rotate_both_a(t_stack **a, t_stack **b,
 						t_stack *cheapest_node);
-void				case_of_rarrb(t_stack **a, t_stack **b,
+void				case_of_rarrb_a(t_stack **a, t_stack **b,
 						t_stack *cheapest_node);
-void				case_of_rrarb(t_stack **a, t_stack **b,
+void				case_of_rrarb_a(t_stack **a, t_stack **b,
+						t_stack *cheapest_node);
+void				rotate_both_b(t_stack **a, t_stack **b,
+						t_stack *cheapest_node);
+void				rev_rotate_both_b(t_stack **a, t_stack **b,
+						t_stack *cheapest_node);
+void				case_of_rrarb_b(t_stack **a, t_stack **b,
+						t_stack *cheapest_node);
+void				case_of_rrbra_b(t_stack **a, t_stack **b,
 						t_stack *cheapest_node);
 void				prep_for_push_a(t_stack **a, t_stack *top_node);
 void				prep_for_push_b(t_stack **b, t_stack *top_node);
@@ -74,11 +83,8 @@ char				*ft_substr(char const *s, unsigned int start, size_t len);
 t_stack				*ft_lstlast(t_stack *a);
 t_stack				*ft_lstnew(int content);
 t_stack				*init_stack(int ac, char **av);
-t_stack				*get_cheapest(t_stack *a);
+t_stack				*get_cheapest(t_stack *stack);
 t_stack				*ft_min(t_stack *a);
 t_stack				*ft_max(t_stack *a);
-
-// remove this after
-void				print_stack(t_stack *stack);
 
 #endif

@@ -6,7 +6,7 @@
 /*   By: bjniane <bjniane@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/10 19:54:15 by bjniane           #+#    #+#             */
-/*   Updated: 2024/05/13 04:52:59 by bjniane          ###   ########.fr       */
+/*   Updated: 2024/06/02 16:18:39 by bjniane          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -74,7 +74,7 @@ static int	fill_string(const char *s, char c, char **ret, size_t len)
 
 char	**ft_split(const char *s, char c)
 {
-	char **ret;
+	char	**ret;
 
 	if (!s)
 		return (NULL);

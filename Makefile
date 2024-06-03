@@ -6,7 +6,8 @@ SRC = src/ft_check_dup.c\
 	  src/ft_check_sorted.c\
 	  src/ft_error.c\
 	  src/ft_free.c\
-	  src/ft_rotate.c\
+	  src/ft_rotate_a.c\
+	  src/ft_rotate_b.c\
 	  src/ft_sort_3.c\
 	  src/ft_sort.c\
 	  src/ft_split.c\
@@ -16,7 +17,8 @@ SRC = src/ft_check_dup.c\
 	  src/prep_for_push.c\
 	  src/lst_utilis.c\
 	  src/push_swap.c\
-	  src/rules.c\
+	  src/rules1.c\
+	  src/rules2.c\
 
 OBJ = ${SRC:.c=.o}
 

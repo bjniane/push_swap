@@ -6,21 +6,21 @@
 /*   By: bjniane <bjniane@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/13 00:25:00 by bjniane           #+#    #+#             */
-/*   Updated: 2024/06/02 16:04:09 by bjniane          ###   ########.fr       */
+/*   Updated: 2024/06/03 14:39:38 by bjniane          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-t_stack	*get_cheapest(t_stack *a)
+t_stack	*get_cheapest(t_stack *stack)
 {
-	if (!a)
+	if (!stack)
 		return (NULL);
-	while (a)
+	while (stack)
 	{
-		if (a->cheapest)
-			return (a);
-		a = a->next;
+		if (stack->cheapest)
+			return (stack);
+		stack = stack->next;
 	}
 	return (NULL);
 }
@@ -31,16 +31,16 @@ static void	move_a_to_b(t_stack **a, t_stack **b)
 
 	cheapest_node = get_cheapest(*a);
 	if (cheapest_node->above_median && cheapest_node->target->above_median)
-		rotate_both(a, b, cheapest_node);
+		rotate_both_a(a, b, cheapest_node);
 	else if (!(cheapest_node->above_median)
 		&& !(cheapest_node->target->above_median))
-		rev_rotate_both(a, b, cheapest_node);
+		rev_rotate_both_a(a, b, cheapest_node);
 	else if (cheapest_node->above_median
 		&& !(cheapest_node->target->above_median))
-		case_of_rarrb(a, b, cheapest_node);
+		case_of_rarrb_a(a, b, cheapest_node);
 	else if (!(cheapest_node->above_median)
 		&& cheapest_node->target->above_median)
-		case_of_rrarb(a, b, cheapest_node);
+		case_of_rrarb_a(a, b, cheapest_node);
 	prep_for_push_a(a, cheapest_node);
 	prep_for_push_b(b, cheapest_node->target);
 	ft_pb(a, b, 0);
@@ -48,7 +48,22 @@ static void	move_a_to_b(t_stack **a, t_stack **b)
 
 static void	move_b_to_a(t_stack **a, t_stack **b)
 {
-	prep_for_push_a(a, (*b)->target);
+	t_stack	*cheapest_node;
+
+	cheapest_node = get_cheapest(*b);
+	if (cheapest_node->above_median && cheapest_node->target->above_median)
+		rotate_both_b(a, b, cheapest_node);
+	else if (!(cheapest_node->above_median)
+		&& !(cheapest_node->target->above_median))
+		rev_rotate_both_b(a, b, cheapest_node);
+	else if (cheapest_node->above_median
+		&& !(cheapest_node->target->above_median))
+		case_of_rrarb_b(a, b, cheapest_node);
+	else if (!(cheapest_node->above_median)
+		&& cheapest_node->target->above_median)
+		case_of_rrbra_b(a, b, cheapest_node);
+	prep_for_push_b(b, cheapest_node);
+	prep_for_push_a(a, cheapest_node->target);
 	ft_pa(a, b, 0);
 }
 
@@ -65,7 +80,7 @@ static void	min_on_top(t_stack **a)
 
 void	ft_sort(t_stack **a, t_stack **b)
 {
-	int len_a;
+	int	len_a;
 
 	ft_pb(a, b, 0);
 	len_a = ft_lstsize(*a);
@@ -82,6 +97,5 @@ void	ft_sort(t_stack **a, t_stack **b)
 		init_node_b(*a, *b);
 		move_b_to_a(a, b);
 	}
-	// current_index(*a);
 	min_on_top(a);
 }
