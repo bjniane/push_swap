@@ -6,7 +6,7 @@
 /*   By: bjniane <bjniane@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/10 15:57:21 by bjniane           #+#    #+#             */
-/*   Updated: 2024/05/13 04:52:16 by bjniane          ###   ########.fr       */
+/*   Updated: 2024/06/02 16:16:08 by bjniane          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 int	ft_check_dup(t_stack *a)
 {
-	t_stack *tmp;
+	t_stack	*tmp;
 
 	while (a)
 	{

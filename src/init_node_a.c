@@ -6,7 +6,7 @@
 /*   By: bjniane <bjniane@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/28 01:14:22 by bjniane           #+#    #+#             */
-/*   Updated: 2024/06/02 16:04:44 by bjniane          ###   ########.fr       */
+/*   Updated: 2024/06/03 13:49:14 by bjniane          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -81,7 +81,7 @@ static void	cost_of_a(t_stack *a, t_stack *b)
 	}
 }
 
-void	set_cheapest(t_stack *a)
+void	set_cheapest_a(t_stack *a)
 {
 	long	cheapesst_value;
 	t_stack	*cheapest_node;
@@ -108,5 +108,5 @@ void	init_node_a(t_stack *a, t_stack *b)
 	current_index(b);
 	target_of_a(a, b);
 	cost_of_a(a, b);
-	set_cheapest(a);
+	set_cheapest_a(a);
 }

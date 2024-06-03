@@ -6,11 +6,25 @@
 /*   By: bjniane <bjniane@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/13 00:37:43 by bjniane           #+#    #+#             */
-/*   Updated: 2024/05/28 14:25:42 by bjniane          ###   ########.fr       */
+/*   Updated: 2024/06/02 16:21:09 by bjniane          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
+
+t_stack	*ft_max(t_stack *a)
+{
+	t_stack	*max_node;
+
+	max_node = a;
+	while (a)
+	{
+		if (a->data > max_node->data)
+			max_node = a;
+		a = a->next;
+	}
+	return (max_node);
+}
 
 void	ft_sort_3(t_stack **a)
 {
