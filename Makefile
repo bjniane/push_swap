@@ -1,9 +1,10 @@
 NAME = push_swap
-CC = gcc
+CC = cc
 FLAGS = -Wall -Wextra -Werror -g3 -fsanitize=address
 
 SRC = src/ft_check_dup.c\
 	  src/ft_check_sorted.c\
+	  src/ft_check_args.c\
 	  src/ft_error.c\
 	  src/ft_free.c\
 	  src/ft_rotate_a.c\

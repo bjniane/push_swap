@@ -6,18 +6,11 @@
 /*   By: bjniane <bjniane@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/10 20:03:11 by bjniane           #+#    #+#             */
-/*   Updated: 2024/06/03 16:21:49 by bjniane          ###   ########.fr       */
+/*   Updated: 2024/06/07 00:53:35 by bjniane          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
-
-static int	ft_isdigit(int c)
-{
-	if (c >= '0' && c <= '9')
-		return (1);
-	return (0);
-}
 
 int	ft_atoi(const char *str)
 {
@@ -38,8 +31,6 @@ int	ft_atoi(const char *str)
 	}
 	while (str[i])
 	{
-		if (!ft_isdigit(str[i]))
-			ft_error();
 		result = result * 10 + str[i] - '0';
 		i++;
 	}

@@ -6,7 +6,7 @@
 /*   By: bjniane <bjniane@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/10 15:57:46 by bjniane           #+#    #+#             */
-/*   Updated: 2024/06/03 14:41:19 by bjniane          ###   ########.fr       */
+/*   Updated: 2024/06/07 00:47:07 by bjniane          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,6 +33,7 @@ typedef struct s_stack
 
 size_t				ft_strlen(const char *str);
 int					main(int ac, char **av);
+int					check_error(char **argv, int i, int j);
 int					ft_atoi(const char *str);
 int					ft_check_dup(t_stack *a);
 int					ft_check_sorted(t_stack *a);

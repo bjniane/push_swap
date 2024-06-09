@@ -6,7 +6,7 @@
 /*   By: bjniane <bjniane@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/10 16:11:18 by bjniane           #+#    #+#             */
-/*   Updated: 2024/06/03 16:28:35 by bjniane          ###   ########.fr       */
+/*   Updated: 2024/06/07 00:41:31 by bjniane          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,12 +49,13 @@ t_stack	*init_stack(int ac, char **av)
 	while (i < ac)
 	{
 		k = 0;
+		if (!check_error(av, 1, 0) || ft_strcmp(av[i], "") == 0
+			|| ft_strcmp(av[i], " ") == 0)
+			ft_error();
 		if (ac == 2)
 			tmp = ft_split(av[1], ' ');
 		else
 			tmp = ft_split(av[i], ' ');
-		if (ft_strcmp(av[i], " ") == 0 || ft_strcmp(av[i], "") == 0)
-			ft_error();
 		while (tmp[k])
 			ft_add_back(&a, ft_lstnew(ft_atoi(tmp[k++])));
 		ft_freestr(tmp);
