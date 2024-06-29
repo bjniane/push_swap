@@ -6,7 +6,7 @@
 /*   By: bjniane <bjniane@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/07 00:46:20 by bjniane           #+#    #+#             */
-/*   Updated: 2024/06/07 00:46:55 by bjniane          ###   ########.fr       */
+/*   Updated: 2024/06/30 00:11:09 by bjniane          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,27 +33,28 @@ static int	space(int c)
 	return (0);
 }
 
-int	check_error(char **argv, int i, int j)
+int	check_error(char **av, int i, int j)
 {
-	while (argv[i])
+	while (av[i])
 	{
 		j = 0;
-		while ((argv[i][j] != '\0'))
+		while ((av[i][j] != '\0'))
 		{
-			if (sign(argv[i][j]))
+			if (sign(av[i][j]))
 			{
-				j++;
-				if (!digit(argv[i][j]))
+				if (!digit(av[i][++j]))
 					return (0);
 			}
-			else if (digit(argv[i][j]))
+			else if (digit(av[i][j]))
 			{
 				j++;
-				if (argv[i][j] == '\0')
+				if (av[i][j] == '\0')
 					break ;
-				if (!digit(argv[i][j]) && !space(argv[i][j]))
+				if (!digit(av[i][j]) && !space(av[i][j]))
 					return (0);
 			}
+			else if (!digit(av[i][j]) && !space(av[i][j]))
+				return (0);
 			j++;
 		}
 		i++;

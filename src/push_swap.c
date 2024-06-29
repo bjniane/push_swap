@@ -6,7 +6,7 @@
 /*   By: bjniane <bjniane@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/10 16:11:18 by bjniane           #+#    #+#             */
-/*   Updated: 2024/06/07 00:41:31 by bjniane          ###   ########.fr       */
+/*   Updated: 2024/06/30 00:07:22 by bjniane          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,16 +25,6 @@ void	ft_freestr(char **tmp)
 	free(tmp);
 }
 
-static int	ft_strcmp(const char *s1, const char *s2)
-{
-	int	i;
-
-	i = 0;
-	while (s1[i] && s2[i] && (s1[i] == s2[i]))
-		i++;
-	return (s1[i] - s2[i]);
-}
-
 t_stack	*init_stack(int ac, char **av)
 {
 	t_stack	*a;
@@ -49,8 +39,7 @@ t_stack	*init_stack(int ac, char **av)
 	while (i < ac)
 	{
 		k = 0;
-		if (!check_error(av, 1, 0) || ft_strcmp(av[i], "") == 0
-			|| ft_strcmp(av[i], " ") == 0)
+		if (!check_error(av, 1, 0))
 			ft_error();
 		if (ac == 2)
 			tmp = ft_split(av[1], ' ');
